@@ -1,21 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppComponent } from '../app.component';
-import { HeroeComponent } from './heroe/heroe.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { ListadoComponent } from '../heroes/listado/listado.component';
+import { HeroeComponent } from '../heroes/heroe/heroe.component';
+//import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({ 
-    declarations:[
-        AppComponent,        
-        HeroeComponent
+    declarations:[             
+        HeroeComponent,
+        ListadoComponent
     ],
     imports:[
-        BrowserModule,
-        HeroesModule
+        //BrowserModule,
+        CommonModule
     ],
     providers:[],
-    bootstrap:[AppComponent]
+    bootstrap:[]
 })
 export class HeroesModule{
 
