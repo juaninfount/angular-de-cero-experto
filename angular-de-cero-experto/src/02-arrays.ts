@@ -1,20 +1,20 @@
 
 let habilidades = ['Bash','Counter','Healing'];
-interface Personaje{
+interface Character{
   nombre: string;
   hp: number,
   habilidades: string[],
   puebloNatal? : string 
 }
 
-const personaje: Personaje = {
+const personaje: Character = {
   nombre: 'Strider',
   hp: 34,
   habilidades: ['Bash','Counter']
 };
 
 
-function curar(personaje: Personaje, curarX: number):void{
+function curar(personaje: Character, curarX: number):void{
     personaje.hp += curarX;
     console.log(`Sumar ${curarX} al hp del personaje ${personaje.nombre}.`);
     console.log(personaje);

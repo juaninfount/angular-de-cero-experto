@@ -1,10 +1,9 @@
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+//import { HeroesModule } from './heroes/heroes.module';
+//import { ContadorModule } from './contador/contador.module';
+import { DbzModule } from './dbz/dbz.module';
 import { AppComponent } from './app.component';
-import { ContadorComponent } from './contador.component';
-//import { HeroeComponent } from './heroes/heroe/heroe.component';
-//import { ListadoComponent } from './heroes/listado/listado.component';
-import { ContadorModule } from './contador/contador.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +11,12 @@ import { ContadorModule } from './contador/contador.module';
   ],
   imports: [
     BrowserModule, 
-    ContadorModule  
+    /*
+    HeroesModule,
+    ContadorModule, */
+    DbzModule  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
