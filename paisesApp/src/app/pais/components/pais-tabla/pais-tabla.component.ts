@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/pais.interface';
+import { Constants } from '../../../../constants/my-constant';
 
 @Component({
   selector: 'app-pais-tabla',
@@ -7,11 +8,11 @@ import { Country } from '../../interfaces/pais.interface';
 })
 export class PaisTablaComponent implements OnInit {
 
-  @Input() paises:Country[] = [];
-
-  constructor(){}
-
-  ngOnInit(): void {
+  restCountriesVersion: string = Constants.restCountriesVersion;
+  @Input() paises: Country[] = [];  
+  constructor() {
   }
+
+  ngOnInit(): void { }
 
 }

@@ -24,7 +24,10 @@ export class VerPaisComponent implements OnInit {
       .pipe(
         switchMap(({ id }) => this.paisService.getPaisPorAlpha(id))
          ,tap(console.log) //  We use the pipe to chain the tap operator, which just logs the values of the source observable 
-      ).subscribe(pais => this.pais = pais[0]);
+      ).subscribe(pais => {       
+        console.log(pais); 
+        this.pais = pais[0];        
+      });
     /*
     this.activatedRoute.params.subscribe( ({id}) => {
         console.log(id);
