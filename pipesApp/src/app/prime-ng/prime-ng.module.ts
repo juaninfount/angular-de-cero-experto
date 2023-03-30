@@ -1,16 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { FieldsetModule }  from 'primeng/fieldset';
+import { FieldsetModule } from 'primeng/fieldset';
 import { MenubarModule } from 'primeng/menubar';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
 
 @NgModule({
-  declarations: [],  
-  exports:[  
+  declarations: [],
+  exports: [
     ButtonModule,
-    CardModule,    
+    CardModule,
     FieldsetModule,
-    MenubarModule
+    MenubarModule,
+    TableModule,
+    ToolbarModule
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 

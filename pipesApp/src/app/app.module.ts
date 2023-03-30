@@ -1,8 +1,7 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRouterModule } from './app-router.module';
 import LocaleEs from '@angular/common/locales/es-PE';
@@ -17,15 +16,17 @@ registerLocaleData(LocaleFr);
   ],
   imports: [
     BrowserModule,
-    PrimeNgModule,
     SharedModule,
     AppRouterModule,
-    BrowserAnimationsModule    
+    BrowserAnimationsModule
   ],
   providers: [{
-    provide: LOCALE_ID, 
+    provide: LOCALE_ID,
     useValue: 'es-PE'
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

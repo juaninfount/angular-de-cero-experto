@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 
 
@@ -8,7 +8,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./no-comunes.component.css']
 })
 
-export class NoComunesComponent {
+export class NoComunesComponent implements OnInit {
   nombre: string = 'Juan';
   genero: string = 'masculino';
   invitacionMapa = {
@@ -57,6 +57,8 @@ export class NoComunesComponent {
   miObservable = interval(2000);
   constructor() {
     this.miObservable.subscribe(console.log);
+  }
+  ngOnInit(): void {    
   }
 
   valorPromesa = new Promise((resolve, reject) => {

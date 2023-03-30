@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -7,7 +6,7 @@ import { PrimeNGConfig } from 'primeng/api';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   nombre:string = 'Fulano';
   valor:number = 1000;
   obj = {nombre:'Zutano'};
@@ -19,4 +18,8 @@ export class AppComponent {
   }
 
   constructor(private primeNGConfig: PrimeNGConfig){}
+
+  ngOnInit(): void {
+    this.primeNGConfig.ripple = true;  //adds ripple effect to the host element.
+  }
 }
