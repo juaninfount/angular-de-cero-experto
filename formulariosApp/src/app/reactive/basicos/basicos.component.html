@@ -1,1 +1,44 @@
-<p>basicos works!</p>
+<h2>Template: Básicos</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="guardar()"  autocomplete="off" [formGroup]="miFormulario">
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Producto:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control"
+                        placeholder="Nombre del producto" formControlName="nombre" required />
+                    <span *ngIf="campoEsValido('nombre')" class="form-text text-danger">Debe ser de 3 letras</span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Precio:</label>
+                <div class="col-sm-9">
+                    <input  type="number" class="form-control" formControlName="precio"
+                        placeholder="Precio del producto" />
+                    <span *ngIf="campoEsValido('precio')" class="form-text text-danger">El precio debe ser mayor o igual a 0</span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label" for="existencia">Existencias:</label>
+                <div class="col-sm-9">
+                    <input  type="number" class="form-control" formControlName="existencia"
+                        placeholder="Existencias del producto" required />
+                    <span *ngIf="campoEsValido('existencia')" class="form-text text-danger">Número de existencias debe ser mayor a 0</span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <button type="submit" [disabled]="miFormulario.invalid"
+                        class="btn btn-primary float-end">Guardar</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col">
+                <span>Valid</span>
+            </div>
+        </div>
+    </div>
+</div>

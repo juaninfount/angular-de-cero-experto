@@ -29,9 +29,7 @@ export class DinamicosComponent {
 
   agregarJuego(){
     const nuevoFavorito: Favorito = {id:this.persona.favoritos.length+1, nombre:this.nuevoJuego};
-
     this.persona.favoritos.push(nuevoFavorito);
-
   }
 
   eliminar(index:number){
