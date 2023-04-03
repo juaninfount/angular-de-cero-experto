@@ -1,0 +1,57 @@
+<h2>Validaciones reactivas<h2>
+        <hr>
+
+        <div class="row">
+            <div class="col">
+                <form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="submitFormulario()" >
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Nombre</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre de usuario" />
+                        </div>
+                        <span *ngIf="campoNoValido('nombre')" class="form-text text-danger">Debe de ser en formato de nombre y apellido</span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email" />
+                        </div>
+                        <span *ngIf="campoNoValido('email')" class="form-text text-danger">{{emailErrorMsg}}</span> 
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+                        </div>
+                        <span class="form-text text-danger"
+                        *ngIf="campoNoValido('password')" >La contraseña debe de ser mayor de 6 caracteres</span>
+                    </div>
+
+                        <!-- Confirmacion de password  -->
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Confirmar</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" formControlName="repassword" placeholder="Confirmar Password" />
+                        </div>
+                        <span *ngIf="campoNoValido('repassword')" 
+                        class="form-text text-danger">Las contraseñas ingresadas no coinciden</span> 
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" name="submitFormulario"  
+                            [disabled]="miFormulario.pending"
+                            class="btn btn-primary float-end" >Sign up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <h2>Form Valid: {{miFormulario.valid}}   
+        </h2>
+
+        <h2>Nombre:</h2>
+        <pre>{{this.miFormulario.controls['nombre'].errors | json}} </pre>

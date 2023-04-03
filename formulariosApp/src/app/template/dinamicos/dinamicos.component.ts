@@ -8,8 +8,8 @@ interface Persona {
 
 interface Favorito {
   id: number;
-  nombre: string;
-}
+  nombre:  string;
+} 
 
 @Component({
   selector: 'app-dinamicos',
@@ -22,7 +22,7 @@ export class DinamicosComponent {
   persona: Persona = {
     nombre: 'JJ',
     favoritos: [
-      { id: 1, nombre: 'C&C General' },
+      { id: 1, nombre: 'C&C General'    },
       { id: 2, nombre: 'Counter Strike' }
     ]
   };
