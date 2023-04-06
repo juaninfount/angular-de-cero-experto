@@ -41,9 +41,10 @@ export class PaisesService {
 
   getPaisesPorRegion(termino: string): Observable<Country[]> {
     let url = `${URLs.apiPorRegion}${termino}`;
+    /*
     if ('v2' === Constants.restCountriesVersion) {
       url = `${URLs.apiPorRegionV2}${termino}`;
-    }
+    }*/
     return this.http.get<Country[]>(url);
   }
 
@@ -51,7 +52,6 @@ export class PaisesService {
     if (!borders) {
       return of([]);
     }
-    //console.log(`getPaisesFrontera => fronteras: ${borders}`);
     const peticiones: Observable<CountrySmall>[] = [];
     borders.forEach(codigo => {
       const peticion = this.getPaisPorCodigoSmall(codigo);

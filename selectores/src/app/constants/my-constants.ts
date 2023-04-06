@@ -1,6 +1,5 @@
 export const Constants = {    
-    restCountriesVersion: 'v3', // v2 | v3
-    regiones_v2         : ['EU', 'EFTA', 'CARICOM', 'PA', 'AU', 'USAN', 'EEU', 'AL', 'ASEAN', 'CAIS', 'CEFTA', 'NAFTA', 'SAARC'],
+    restCountriesVersion: 'v3',
     regiones            : ['africa', 'americas', 'asia', 'europe', 'oceania']
   };
 

@@ -4,7 +4,6 @@ import { switchMap, tap } from 'rxjs/operators';
 import { PaisesService } from '../../services/paises.service';
 import { Country, CountrySmall } from '../../interfaces/paises.interface';
 import { Constants, URLs } from '../../../constants/my-constants';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-selector-page',
